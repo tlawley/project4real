@@ -7,7 +7,7 @@
  * Thomas Lawley
  * tlawley
  *
- * <#Description#>
+ * cirlce class
  */
 
 #include "Circle.h"
@@ -17,13 +17,49 @@
 #include <algorithm>
 using namespace std;
 
-// TODO: implement two constructors, setCenter, getCenter, setColor, getColor,
-//       setRadius, getRadius, read, write.
+Circle::Circle(){
+    return;
+}
 
+Circle::Circle(Point pt, int r, Color c){
+    center = pt;
+    radius = checkRadius(r);
+}
 
+void Circle::setCenter(Point pt){
+    center = pt;
+    return;
+}
 
-// Your code goes above this line.
-// Don't change the implementations below!
+Point Circle::getCenter(){
+    return center;
+}
+
+void Circle::setRadius(int r) {
+    radius = checkRadius(r);
+}
+
+int Circle::getRadius(){
+    return radius;
+}
+
+void Circle::setColor(Color c){
+    color = c;
+    return;
+}
+
+Color Circle::getColor(){
+    return color;
+}
+
+void Circle::read(istream &ins){
+    ins >> center >> radius >> color;
+    return;
+}
+
+void Circle::write(ostream &outs){
+    outs << center << " " << radius << " " << color;
+}
 
 istream& operator >> (istream& ins, Circle& circle)
 {
