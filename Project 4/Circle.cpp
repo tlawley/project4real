@@ -31,11 +31,35 @@ void Circle::setCenter(Point pt){
     return;
 }
 
+Point Circle::getCenter(){
+    return center;
+}
 
+void Circle::setRadius(int r) {
+    radius = checkRadius(r);
+}
 
+int Circle::getRadius(){
+    return radius;
+}
 
-// Your code goes above this line.
-// Don't change the implementations below!
+void Circle::setColor(Color c){
+    color = c;
+    return;
+}
+
+Color Circle::getColor(){
+    return color;
+}
+
+void Circle::read(istream &ins){
+    ins >> center >> radius >> color;
+    return;
+}
+
+void Circle::write(ostream &outs){
+    outs << center << " " << radius << " " << color;
+}
 
 istream& operator >> (istream& ins, Circle& circle)
 {

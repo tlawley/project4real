@@ -4,10 +4,10 @@
  * EECS 183, Winter 2017
  * Project 4: CoolPics
  *
- * <#Name(s)#>
- * <#uniqname(s)#>
+ * Thomas Lawley Sahas Sranjan
+ * tlawley Sranjan
  *
- * <#Description#>
+ * rectangle class
  */
 
 #include "Rectangle.h"
@@ -21,6 +21,90 @@ using namespace std;
 //       setColor, setColorTopLeft, getColorTopLeft, setColorTopRight,
 //       getColorTopRight, setColorBottomRight, getColorBottomRight,
 //       setColorBottomLeft, getColorBottomLeft, read, write.
+
+Rectangle::Rectangle(){
+    return;
+}
+
+Rectangle::Rectangle(Point pt1, Point pt2, Color color){
+    start = pt1;
+    end = pt2;
+    colorTopRight = color;
+    colorTopLeft = color;
+    colorBottomRight = color;
+    colorBottomLeft = color;
+}
+
+Rectangle::Rectangle(Point pt1, Point pt2, Color cTopLeft, Color cTopRight, Color cBottomRight, Color cBottomLeft){
+    start = pt1;
+    end = pt2;
+    colorTopRight = cTopRight;
+    colorTopLeft = cTopLeft;
+    colorBottomRight = cBottomRight;
+    colorBottomLeft = cBottomLeft;
+}
+
+void Rectangle::setStart(Point pt){
+    start = pt;
+}
+
+Point Rectangle::getStart(){
+    return start;
+}
+
+void Rectangle::setEnd(Point pt){
+    end = pt;
+}
+
+Point Rectangle::getEnd(){
+    return end;
+}
+
+void Rectangle::setColor(Color color){
+    colorTopRight = color;
+    colorTopLeft = color;
+    colorBottomRight = color;
+    colorBottomLeft = color;
+}
+
+void Rectangle::setColorTopLeft(Color color){
+    colorTopLeft = color;
+}
+
+Color Rectangle::getColorTopLeft(){
+    return colorTopLeft;
+}
+
+void Rectangle::setColorTopRight(Color color){
+    colorTopRight = color;
+}
+
+Color Rectangle::getColorTopRight(){
+    return colorTopRight;
+}
+
+void Rectangle::setColorBottomLeft(Color color){
+    colorBottomLeft = color;
+}
+
+Color Rectangle::getColorBottomLeft(){
+    return colorBottomLeft;
+}
+
+void Rectangle::setColorBottomRight(Color color){
+    colorBottomRight = color;
+}
+
+Color Rectangle::getColorBottomRight(){
+    return colorBottomRight;
+}
+
+void Rectangle::read(istream& ins){
+}
+    
+
+
+
 
 
 
