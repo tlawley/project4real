@@ -51,9 +51,7 @@ int Color::getBlue(){
 }
 
 void Color::read(istream& ins){
-    char space1 = ' ';
-    char space2 = ' ';
-    ins >> red >> space1 >> green >> space2 >> blue;
+    ins >> red >> green >> blue;
     return;
 }
 
