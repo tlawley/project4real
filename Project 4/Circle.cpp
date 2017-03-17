@@ -7,7 +7,7 @@
  * Thomas Lawley
  * tlawley
  *
- * <#Description#>
+ * cirlce class
  */
 
 #include "Circle.h"
@@ -17,8 +17,20 @@
 #include <algorithm>
 using namespace std;
 
-// TODO: implement two constructors, setCenter, getCenter, setColor, getColor,
-//       setRadius, getRadius, read, write.
+Circle::Circle(){
+    return;
+}
+
+Circle::Circle(Point pt, int r, Color c){
+    center = pt;
+    radius = checkRadius(r);
+}
+
+void Circle::setCenter(Point pt){
+    center = pt;
+    return;
+}
+
 
 
 
