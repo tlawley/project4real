@@ -140,8 +140,11 @@ void loadFile(Graphics& drawer)
 
 string tolower(string str)
 {
-    // TODO: implement
-
+    // convert each character tolower in string
+    for (int i = 0; i<str.length(); i++) {
+        str[i] = tolower(str[i]);
+    }
+    
     return str;
 }
 
