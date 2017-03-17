@@ -24,6 +24,7 @@ Circle::Circle(){
 Circle::Circle(Point pt, int r, Color c){
     center = pt;
     radius = checkRadius(r);
+    color = c;
 }
 
 void Circle::setCenter(Point pt){
@@ -57,7 +58,7 @@ void Circle::read(istream &ins){
     return;
 }
 
-void Circle::write(ostream &outs){
+void Circle::write(ostream& outs){
     outs << center << " " << radius << " " << color;
 }
 

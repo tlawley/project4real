@@ -100,12 +100,16 @@ Color Rectangle::getColorBottomRight(){
 }
 
 void Rectangle::read(istream& ins){
+    ins >> start >> end >> colorTopLeft;
+    if (ins.fail()){
+        ins.clear();
+        ins >> start >> end >> colorTopLeft >> colorTopRight >> colorBottomRight >> colorBottomLeft;
+    }
 }
-    
 
-
-
-
+void Rectangle::write(ostream &outs){
+    outs << start << " " << end << " " <<  colorTopLeft << " " << colorTopRight << " " << colorBottomRight << " " <<colorBottomLeft;
+}
 
 
 // Your code goes above this line.
