@@ -26,17 +26,13 @@ using namespace std;
  * Modifies: cout.
  * Effects:  Prints an opening message.
  */
-void printOpener(){
-    
-}
-
+void printOpener();
 /**
  * Requires: Nothing.
  * Modifies: cout.
  * Effects:  Prints a closing message.
  */
 void printCloser();
-
 /**
  * Requires: Nothing.
  * Modifies: cout.
@@ -51,7 +47,26 @@ void printMenu();
  *           (and appends .txt) until the file is successfully opened.
  *           Returns the name of the file that was opened.
  */
-string openFile(ifstream& ins);
+string openFile(ifstream& ins){
+    if (ins.is_open()){
+        ins.clear();
+        ins.close();
+    }
+string file;
+cin >> file;
+    file = file + ".txt";
+    ins.open(file);
+    while (ins.fail()){
+        cout << "Error in opening " << file << ".";
+        ins.clear();
+        cout << " Enter another file name: ";
+        cin >> file;
+        file = file + ".txt";
+        ins.open(file);
+    }
+    return file;
+}
+
 
 /**
  * Requires: Nothing.
@@ -135,9 +150,58 @@ void writeFile(const Graphics& drawer)
     // This will make use of Graphics::writeFile()
 }
 
-void loadFile(Graphics& drawer)
-{
-    // TODO: implement
+void loadFile(Graphics& drawer){
+        ifstream ins;
+        string file;
+        char shape;
+        string errorLine;
+        
+        fileName = openFile(ins);
+        while (!ins.eof()) {
+            ins >> shapeType;
+            Circle newCircle;
+            Line newLine;
+            Rectangle newRect;
+            Triangle newTri;
+            
+            switch (shapeType) {
+                    
+                    
+                case 'C':
+                    //read and draw a circle
+                    ins >> newCircle;
+                    newCircle.draw(drawer);
+                    break;
+                    
+                case 'L':
+                    // read and draw a line
+                    ins >> newLine;
+                    newLine.draw(drawer);
+                    break;
+                    
+                case 'R':
+                    // read and draw a rectangle
+                    ins >> newRect;
+                    newRect.draw(drawer);
+                    break;
+                    
+                case 'T':
+                    // read and draw a triangle
+                    ins >> newTri;
+                    newTri.draw(drawer);
+                    break;
+                    
+                default:
+                    getline(ins, errorLine);
+                    drawer.clear();
+                    cout << "Error in input file: " << shapeType << errorLine << endl;
+            }
+            
+            // close ins, print "wrote" statement
+            ins.close();
+        }
+        cout << "[Loaded " << fileName << "]" << endl;
+    }    // TODO: implement
 }
 
 string tolower(string str)
