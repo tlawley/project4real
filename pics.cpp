@@ -4,10 +4,10 @@
  * EECS 183, Winter 2017
  * Project 4: CoolPics
  *
- * <#Name(s)#>
- * <#uniqname(s)#>
+ * Thomas Lawley
+ * tlawley
  *
- * <#Description#>
+ * main for project 4
  */
 
 #include <iostream>
@@ -26,7 +26,9 @@ using namespace std;
  * Modifies: cout.
  * Effects:  Prints an opening message.
  */
-void printOpener();
+void printOpener(){
+    
+}
 
 /**
  * Requires: Nothing.
